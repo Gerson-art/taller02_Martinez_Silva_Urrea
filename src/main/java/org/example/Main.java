@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class Main {
 
-    public static void pagarHabitacion( int [][] arr ) {
+    public static int [][] pagarHabitacion( int [][] arr ) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Ingrese la habitacion en la cual se hospedo");
         int habitacion = sc.nextInt();
@@ -18,10 +18,12 @@ public class Main {
             }
                 System.out.println("Se ha pagado exitosamente la habitación");
         }
+        return arr;
 
 
 
         }
+
         public static void imprimirBoleta(int [][] arr, int habitacion) {
             double valor=0;
         switch (arr[habitacion][0]) {

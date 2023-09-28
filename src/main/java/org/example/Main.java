@@ -7,14 +7,7 @@ import java.util.ArrayList;
 import java.util.ArrayList;
 
 public class Main {
-    public static void main(String[] args) {
-        int [][] Arr = new int [10][2];
-        for(int i=0; i< Arr.length; i++) {
-            for(int j=0; j< Arr[i].length; j++) {
-                Arr[i][j] = 0;
-            }
-        }
-    }
+
     public static void pagarHabitacion( int [][] arr ) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Ingrese la habitacion en la cual se hospedo");
@@ -23,6 +16,7 @@ public class Main {
                 if(arr[i][0] == habitacion) {
                     arr[i][0] = 0;
             }
+                System.out.println("Se ha pagado exitosamente la habitación");
         }
 
 
@@ -57,12 +51,18 @@ public class Main {
 
 
 
+    }
 
+    public static void mostrarHabitaciones(int [][] arr){
+        System.out.println("Estado de habitaciones: ");
+        for(int i=0; i< arr.length; i++) {
+            for(int j=0; j< arr[i].length; j++) {
+                System.out.println(arr[i][j]);
+            }
+        }
 
 
     }
-
-
 
 
 

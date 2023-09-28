@@ -1,7 +1,77 @@
 package org.example;
 
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-    
+        int[][] habitaciones = new int[10][2];
+        ocuparHabitacion(habitaciones);
+        mostrarHabitacion(habitaciones);
     }
+    public static int pedirInt(){
+        Scanner teclado = new Scanner(System.in);
+        try {
+            return teclado.nextInt();
+        }catch (InputMismatchException e){
+            System.out.println("Ingrese un número, por favor");
+            return pedirInt();
+        }
+    }
+    public static int preguntarDias(){
+        System.out.println("Ingrese cantidad de días");
+        int ans = pedirInt();
+        if (ans>0){
+            return ans;
+        }else {
+            System.out.println("Ingrese un número mayor a 0, por favor");
+            return preguntarDias();
+        }
+    }
+
+    public static int preguntarAlimentacion(){
+        System.out.println("[0] Habitación sin alimentación \n[1] Habitación con alimentación");
+        int ans = pedirInt();
+        int estado = 0;
+        switch (ans) {
+            case 0:
+                estado = 2;
+                break;
+            case 1:
+                estado = 3;
+                break;
+            default:
+                System.out.println("Ingrese una opción valida, por favor");
+                return preguntarAlimentacion();
+        }return estado;
+    }
+    public static int preguntarHabitacion(){
+        System.out.println("Ingrese el número de habitación [1-10]");
+        int ans = pedirInt();
+        if (ans>0 && ans<=10){
+            return ans-1;
+        }else{
+            System.out.println("Ingrese un número de habitacion válida, por favor");
+            return preguntarHabitacion();
+        }
+    }
+    public static int[][] ocuparHabitacion(int[][] habitaciones) {
+        int habitacion = preguntarHabitacion();
+        int estado = preguntarAlimentacion();
+        int dias = preguntarDias();
+
+        habitaciones[habitacion][0] = estado;
+        habitaciones[habitacion][1] = dias;
+
+        return habitaciones;
+    }
+    public static void mostrarHabitacion(int[][] habitaciones){
+        for (int i = 0; i <habitaciones.length ; i++) {
+            for (int j = 0; j < habitaciones[i].length; j++) {
+                System.out.print(habitaciones[i][j]+" ");
+            }
+            System.out.println();
+        }
+    }
+
 }

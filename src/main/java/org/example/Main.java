@@ -4,8 +4,7 @@ package org.example;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class 
-{
+public class Main{
     public static void main(String[] args) {
     }
     public static int pedirInt(){
@@ -98,10 +97,10 @@ public class
         }else {
             System.out.println("La habitación no está reservada");
             return habitaciones;
-=======
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
-public class Main {
+
   public static void main(String[] args) {
         menu();
     }
@@ -170,3 +169,6 @@ public class Main {
         }
         return habitaciones;
     }
+        
+}
+    

@@ -20,7 +20,7 @@ public class Main {
                 System.out.println("5.- Reiniciar habitaciones");
                 System.out.println("6.- Pagar habitacion");
                 System.out.println("7.- Imprimir boleta");
-                System.out.println("8.- Salir");()
+                System.out.println("8.- Salir");
                 System.out.println("Elija una opcion: ");
                 opcion = sn.nextInt();
                 switch (opcion) {

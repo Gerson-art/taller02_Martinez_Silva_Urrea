@@ -5,14 +5,6 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        int[][] habitaciones = new int[10][2];
-        reservarHabitacion(habitaciones);
-        ocuparHabitacion(habitaciones);
-        mostrarHabitacion(habitaciones);
-        reservarHabitacion(habitaciones);
-        mostrarHabitacion(habitaciones);
-        confirmarReserva(habitaciones);
-        mostrarHabitacion(habitaciones);
     }
     public static int pedirInt(){
         Scanner teclado = new Scanner(System.in);

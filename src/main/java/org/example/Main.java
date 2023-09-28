@@ -5,6 +5,13 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        int[][] habitaciones = new int[10][2];
+        ocuparHabitacion(habitaciones);
+        mostrarHabitacion(habitaciones);
+        reservarHabitacion(habitaciones);
+        mostrarHabitacion(habitaciones);
+        confirmarReserva(habitaciones);
+        mostrarHabitacion(habitaciones);
     }
     public static int pedirInt(){
         Scanner teclado = new Scanner(System.in);
@@ -68,6 +75,9 @@ public class Main {
         }
     }
     public static void mostrarHabitacion(int[][] habitaciones){
+        System.out.println("Habitaciones");
+        System.out.println("[Estado][Dias]");
+        System.out.println("Estado: [0] Dispoinible, [1] Reservado , [2] Ocupado sin alimentación, [3] Ocupado con alimentación");
         for (int i = 0; i <habitaciones.length ; i++) {
             for (int j = 0; j < habitaciones[i].length; j++) {
                 System.out.print(habitaciones[i][j]+" ");
@@ -99,3 +109,4 @@ public class Main {
         }
     }
 }
+

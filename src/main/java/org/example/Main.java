@@ -2,7 +2,10 @@ package org.example;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 public class Main {
-    public static void menu(String[] args){
+  public static void main(String[] args) {
+        menu();
+    }
+    public static void menu(){
         String contra = "1234";
         int [][] habitaciones = crearArreglo();
         String contra2 = "ola";
@@ -69,5 +72,4 @@ public class Main {
     }
 
 }
-
 

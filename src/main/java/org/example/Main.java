@@ -29,9 +29,45 @@ public class Main {
 
         }
         public static void imprimirBoleta(int [][] arr, int habitacion) {
-            for (int i = 0; i < arr.length; i++) {
+            double valor=0;
+        switch (arr[habitacion][0]) {
+            case 2:
+                valor = 30000 * arr[habitacion + 1][1];
+                break;
+            case 3:
+                valor = 45000 * arr[habitacion + 1][1];
 
-                }
-            }
+                break;
+            default:
+                System.out.println("Opcion no valida");
         }
+        switch (arr[habitacion][0]) {
+
+            case 2:
+                System.out.println(" Cantidad de noches hospedadas: "+arr[habitacion+1][1]);
+                System.out.println("El hospedaje fue del tipo: Sin comida");
+                System.out.println("Monto total a pagar:"+valor);
+                break;
+            case 3:
+                System.out.println(" Cantidad de noches hospedadas: "+arr[habitacion+1][1]);
+                System.out.println("El hospedaje fue del tipo: Sin comida");
+                System.out.println("Monto total a pagar:"+valor);
+                break;
+        }
+
+
+
+
+
+
     }
+
+
+
+
+
+
+
+
+}
+

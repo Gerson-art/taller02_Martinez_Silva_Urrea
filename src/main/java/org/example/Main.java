@@ -8,10 +8,9 @@ import java.util.ArrayList;
 
 public class Main {
 
-    public static int [][] pagarHabitacion( int [][] arr ) {
+    public static int [][] pagarHabitacion( int [][] arr, int habitacion ) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Ingrese la habitacion en la cual se hospedo");
-        int habitacion = sc.nextInt();
+
         for(int i=0; i< arr.length; i++) {
                 if(arr[i][0] == habitacion) {
                     arr[i][0] = 0;

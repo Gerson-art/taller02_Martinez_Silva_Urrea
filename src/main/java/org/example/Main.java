@@ -22,8 +22,8 @@ public class Main {
 
 
         }
-        public static IllegalArgumentException validarHabitacion( int habitacion) {
-            if(habitacion <= 1 || habitacion >= 10) {
+        public static IllegalArgumentException validarHabitacion( int habitacison) {
+            if(habitacison <= 1 || habitacison >= 10) {
                 throw new IllegalArgumentException("La habitacion debe estar entre 1 y 10");
             }
             return null;

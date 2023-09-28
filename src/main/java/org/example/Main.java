@@ -1,19 +1,46 @@
 package org.example;
-
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import java.util.Scanner;
 public class Main {
-    public static void main(String[] args) {
-        // Press Alt+Intro with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+    public static void menu(String[] args){
+        String contra = "1234";
+        String contra2 = "ola";
+        int opcion;
+        Scanner sn = new Scanner(System.in);
+        while (true) {
+            System.out.println("Ingrese la contraseña: ");
+            contra2 = sn.nextLine();
+            if (contra.equals(contra2)){
+                System.out.println("1.- Reservar una habitacion");
+                System.out.println("2.- Confirmar reserva");
+                System.out.println("3.- Cancelar reserva");
+                System.out.println("4.- Mostrar Habitaciones");
+                System.out.println("5.- ");
+                System.out.println("5.- Salir");
+                System.out.println("Elija una opcion: ");
+                opcion = sn.nextInt();
+                switch (opcion) {
+                    case 1:
 
-        // Press Mayús+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+                    case 2:
 
-            // Press Mayús+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
+                    case 3:
+
+                    case 4:
+
+                    case 5:
+                        System.exit(0);
+                    default:
+                        System.out.println("Opcion no valida");
+                        break;
+                }
+
+            }
+
+
+
         }
+
+
     }
 }
+

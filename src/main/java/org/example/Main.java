@@ -6,7 +6,12 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         int[][] habitaciones = new int[10][2];
+        reservarHabitacion(habitaciones);
         ocuparHabitacion(habitaciones);
+        mostrarHabitacion(habitaciones);
+        reservarHabitacion(habitaciones);
+        mostrarHabitacion(habitaciones);
+        confirmarReserva(habitaciones);
         mostrarHabitacion(habitaciones);
     }
     public static int pedirInt(){
@@ -57,13 +62,18 @@ public class Main {
     }
     public static int[][] ocuparHabitacion(int[][] habitaciones) {
         int habitacion = preguntarHabitacion();
-        int estado = preguntarAlimentacion();
-        int dias = preguntarDias();
+        if (habitaciones[habitacion][1] == 0) {
+            int alimentacion = preguntarAlimentacion();
+            int dias = preguntarDias();
 
-        habitaciones[habitacion][0] = estado;
-        habitaciones[habitacion][1] = dias;
+            habitaciones[habitacion][0] = alimentacion;
+            habitaciones[habitacion][1] = dias;
 
-        return habitaciones;
+            return habitaciones;
+        }else {
+            System.out.println("La habitación está ocupada");
+            return habitaciones;
+        }
     }
     public static void mostrarHabitacion(int[][] habitaciones){
         for (int i = 0; i <habitaciones.length ; i++) {
@@ -73,5 +83,27 @@ public class Main {
             System.out.println();
         }
     }
-
+    public static int[][] reservarHabitacion(int[][] habitaciones){
+        int habitacion = preguntarHabitacion();
+        if (habitaciones[habitacion][0] == 0 ){
+            int dias = preguntarDias();
+            habitaciones[habitacion][0] = 1;
+            habitaciones[habitacion][1] = dias;
+            return habitaciones;
+        }else {
+            System.out.println("La habitación está ocupada");
+            return habitaciones;
+        }
+    }
+    public static int[][] confirmarReserva(int[][] habitaciones){
+        int habitacion = preguntarHabitacion();
+        if (habitaciones[habitacion][0] == 1){
+            int alimentacion = preguntarAlimentacion();
+            habitaciones[habitacion][0] = alimentacion;
+            return habitaciones;
+        }else {
+            System.out.println("La habitación no está reservada");
+            return habitaciones;
+        }
+    }
 }

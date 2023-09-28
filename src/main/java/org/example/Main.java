@@ -23,8 +23,31 @@ public class Main {
 
 
         }
+        public static IllegalArgumentException validarHabitacion( int habitacion) {
+            if(habitacion <= 1 || habitacion >= 10) {
+                throw new IllegalArgumentException("La habitacion debe estar entre 1 y 10");
+            }
+            return null;
+        }
 
-        public static void imprimirBoleta(int [][] arr, int habitacion) {
+        public static ArrayIndexOutOfBoundsException validarArreglo(int [][] arr) {
+            int cont=0;
+            for(int i=0; i< arr.length; i++) {
+            for(int j=0; j< arr[i].length; j++) {
+                cont+=1;
+                }
+            }
+            if(cont == 20) {
+                throw new ArrayIndexOutOfBoundsException("El arreglo esta vacio");
+            } else{
+                return null;
+            }
+
+
+
+        }
+
+    public static void imprimirBoleta(int [][] arr, int habitacion) {
             double valor=0;
         switch (arr[habitacion][0]) {
             case 2:
